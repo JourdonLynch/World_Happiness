@@ -41,4 +41,20 @@ Figure 2
 
 <img width="618" alt="Screenshot 2025-02-16 at 9 35 45 PM" src="https://github.com/user-attachments/assets/6a927f36-f03e-4d3b-b771-930287a5c685" />
 
+#
+
+The bottom 10 happiest countries were in the world were South Sudan, Central African Republic, Afghanistan, Tanzania, Rwanda, Yemen, Malawi, Sria, Botswana, and Haiti respectively. Six of the 10 least happy countries reside in Africa with three of the remaining four residing in Asia and one being in North america. The leaat happy country in the world was South Sudan with a happiness score of 0.
+
+Figure 3
+
+<img width="619" alt="Screenshot 2025-02-16 at 10 05 14 PM" src="https://github.com/user-attachments/assets/f3c94162-f5a9-4b51-bbff-365ea55289d9" />
+
+
 # 
+
+In addition to happiness, countries were ranked on six different metrics: social support, freedom, corruption, generosity, gdp per capita, and life expectancy. To measure the impact different metrics had on the happiness of a country the pearson correlation coefficient was calculated and countries were plotted using a scatterplot including a linear regression line. 
+
+Figure 4
+
+<img width="692" alt="Screenshot 2025-02-16 at 10 50 48 PM" src="https://github.com/user-attachments/assets/21421218-37b2-48c4-ba2e-de63ecadae1a" />
+
