@@ -56,5 +56,6 @@ In addition to happiness, countries were ranked on six different metrics: social
 
 Figure 4
 
-<img width="692" alt="Screenshot 2025-02-16 at 10 50 48 PM" src="https://github.com/user-attachments/assets/21421218-37b2-48c4-ba2e-de63ecadae1a" />
+In addition to happiness, countries were ranked on six different metrics: social support, freedom, generosity, gdp per capita, life expectancy, and corruption. To measure the impact different metrics had on the happiness of a country the pearson correlation coefficient was calculated and countries were plotted using a scatterplot including a linear regression line.  The closer a countries rank was to 1 the greater the  social support, freedom, generosity, and gdp per capita it had while also indicating lower corruption. A green to red diverging color map was used to indicate rankings from 1 to 143.  
+
 
