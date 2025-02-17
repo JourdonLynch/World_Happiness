@@ -2,7 +2,7 @@
 
 # Introduction
 
-We all have things that make us happy but it’s hard to quantify exactly what makes us happy. Nonetheless the world happiness index grants us insight into what specific countries value the most. THe purpose of this report is to determine how different facts impact our perceived happiness and draw general conclusions as to what we value most as a people.
+We all have things that make us happy but it’s hard to quantify exactly what makes us happy. Nonetheless the world happiness index grants us insight into what specific countries value the most. THe purpose of this report is to determine how different metrics impact our perceived happiness and draw general conclusions as to what we value most as a people.
 
 # Data Validation and cleaning
 
@@ -60,7 +60,7 @@ Figure 4
 
 #
 
-# Conclusion
+# Findings
 
 • Countries in the Oceania region had the highest happiness with a mean happinesss score of 146.5 although this may have been skewed as the region contained the smallest group by far. Europe, South America and North America ranked 2,3,4 respectively with happiness scores of 109.8, 108.4, and 107.3 respectively. Asia ranked 5th with a hapiness score of 72.1 while Africa was the least happy region with a score of 32.8.
 
@@ -70,8 +70,9 @@ Figure 4
 
 • Geneorosity presented a moderate negative corellaton of -0.5 indicating that as generosity decreased so did happiness. This ws in line with expectations.
 
+# Conclusion
 
-interesting observations
+Happiness varies greatly both within and across regions throughout the world. While countries may have different values and beliefs there are still common themes among them. While the saying money doesnt buy happiness is not a foreign concept to many of us in the case of the world happiness report it definitely does make it easier to attain it.
 
 
 
