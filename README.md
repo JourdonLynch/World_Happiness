@@ -64,8 +64,11 @@ Figure 4
 
 • Countries in the Oceania region had the highest happiness with a mean happinesss score of 146.5 although this may have been skewed as the region contained the smallest group by far. Europe, South America and North America ranked 2,3,4 respectively with happiness scores of 109.8, 108.4, and 107.3 respectively. Asia ranked 5th with a hapiness score of 72.1 while Africa was the least happy region with a score of 32.8.
 
-• Social support, lif expectancy, and GDP per capita were the three most influential metrics of happiness with corelattion coefficients of -0.82, 0.78, and 0.73 indicating significnt corellations. This means that as social support decreased so did happiness and as life expectancy and GDP per capita rose happinesss tended to follow. It was interesting to note that corruption had a very weak negative correlation of -0.22 indicating that countries with high corruption aren't necesarilly unhappy. In addition to this freedom had a corellation of -0.57 indicating only a moderate effect. It was hypothesized that this impact would be greater.
+• Social support, lif expectancy, and GDP per capita were the three most influential metrics of happiness with corelattion coefficients of -0.82, 0.78, and 0.73 indicating significnt corellations. This means that as social support decreased so did happiness and as life expectancy and GDP per capita rose happinesss tended to follow.
 
+• It was interesting to note that corruption had a very weak negative correlation of -0.22 indicating that countries with high corruption aren't necesarilly unhappy. In addition to this freedom had a corellation of -0.57 indicating only a moderate effect. It was hypothesized that the impact of these metrics would be greater.
+
+• Geneorosity presented a moderate negative corellaton of -0.5 indicating that as generosity decreased so did happiness. This ws in line with expectations.
 
 
 interesting observations
