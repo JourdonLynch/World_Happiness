@@ -2,7 +2,7 @@
 
 # Introduction
 
-We all have things that make us happy but it’s hard to quantify exactly what makes us happy. Nonetheless the world happiness index grants us insight into what specific countries value the most. THe purpose of this report is to determine how different metrics impact our perceived happiness and draw general conclusions as to what we value most as a people.
+If there's one thing everyone wants, it's to be happy; however, it’s challenging to quantify exactly what makes us happy. Nonetheless, the World Happiness Index grants us insight into what countries value the most. The purpose of this report is to determine how different metrics impact our perceived happiness and draw general conclusions as to what we value most as a people.
 
 # Data Validation and cleaning
 
@@ -27,7 +27,7 @@ The initial dataframe consisted of 135 rows and 10 columns
 
 # Exploratory Analysis
 
-Happiness scores were broken down into seven distinct groups representing different regions. Europe, Oceania, North America, South America, Asia, and Africa. While Russia resides in both europe and Asia for the purpose of this analysis it was placed in the European group as the majority of its population resides there. Asia and Europe have the largest interquartile range at 55 while Oceania had the lowest interquartile range at 1.50. North America, South America, and Africa exhibited outliers representing Haiti, Venezuela, and South Sudan respectively.
+Happiness scores were broken down into seven distinct groups representing different regions. Europe, Oceania, North America, South America, Asia, and Africa. While Russia resides in both Europe and Asia, for the purpose of this analysis, it was placed in the European group as the majority of its population resides there. Asia and Europe have the largest interquartile range at 55, while Oceania has the lowest interquartile range at 1.50. North America, South America, and Africa exhibited outliers representing Haiti, Venezuela, and South Sudan, respectively.
 
 Figure 1
 
@@ -35,7 +35,7 @@ Figure 1
 
 #
 
-The top 10 happiest countries were Finland, Denmark, Norway, Iceland, Netherlands, Switzerland, Sweden New Zealand, Canada , and Austria respectively. Eight of the happiest countries reside in Europe while the remaining two being from Oceania and North America. The happiest country in the world was Finland with a happiness score of 155.
+The top 10 happiest countries were Finland, Denmark, Norway, Iceland, the Netherlands, Switzerland, Sweden, New Zealand, Canada, and Austria, respectively. Eight of the happiest countries reside in Europe while the remaining two are from Oceania and North America. The happiest country in the world was Finland with a happiness score of 155.
 
 Figure 2
 
@@ -43,7 +43,7 @@ Figure 2
 
 #
 
-The bottom 10 happiest countries were in the world were South Sudan, Central African Republic, Afghanistan, Tanzania, Rwanda, Yemen, Malawi, Sria, Botswana, and Haiti respectively. Six of the 10 least happy countries reside in Africa with three of the remaining four residing in Asia and one being in North america. The leaat happy country in the world was South Sudan with a happiness score of 0.
+The bottom 10 happiest countries in the world were South Sudan, Central African Republic, Afghanistan, Tanzania, Rwanda, Yemen, Malawi, Syria, Botswana, and Haiti, respectively. Six of the 10 least happy countries reside in Africa, with three of the remaining four residing in Asia and one being in North America. The least happy country in the world was South Sudan with a happiness score of 0.
 
 Figure 3
 
@@ -52,7 +52,7 @@ Figure 3
 
 # 
 
-In addition to happiness, countries were ranked on six different metrics: social support, freedom, generosity, gdp per capita, life expectancy, and corruption. To measure the impact different metrics had on the happiness of a country the pearson correlation coefficient was calculated and countries were plotted using a scatterplot including a linear regression line.  The closer a countries rank was to 1 the greater the  social support, freedom, generosity, and gdp per capita it had while also indicating lower corruption. A green to red diverging color map was used to indicate rankings from 1 to 143.  
+In addition to happiness, countries were ranked on six different metrics: social support, freedom, generosity, GDP per capita, life expectancy, and corruption. To measure the impact different metrics had on the happiness of a country, the Pearson correlation coefficient was calculated, and countries were plotted using a scatterplot including a linear regression line. The closer a country's rank was to 1, the greater the social support, freedom, generosity, and GDP per capita it had, while also indicating lower corruption. A green to red diverging color map was used to indicate rankings from 1 to 143.
 
 Figure 4
 
@@ -62,13 +62,13 @@ Figure 4
 
 # Findings
 
-• Countries in the Oceania region had the highest happiness with a mean happinesss score of 146.5 although this may have been skewed as the region contained the smallest group by far. Europe, South America and North America ranked 2,3,4 respectively with happiness scores of 109.8, 108.4, and 107.3 respectively. Asia ranked 5th with a hapiness score of 72.1 while Africa was the least happy region with a score of 32.8.
+• Oceania had the highest happiness with a mean happiness score of 146.5, although this may have been skewed as the region contained the fewest countries by far. Europe, South America, and North America ranked second, third, and fourth, respectively, with happiness scores of 109.8, 108.4, and 107.3, respectively. Asia ranked fifth with a happiness score of 72.1, while Africa was the least happy region with a score of 32.8.
 
-• Social support, lif expectancy, and GDP per capita were the three most influential metrics of happiness with corelattion coefficients of -0.82, 0.78, and 0.73 indicating significnt corellations. This means that as social support decreased so did happiness and as life expectancy and GDP per capita rose happinesss tended to follow.
+• Social support, life expectancy, and GDP per capita were the three most influential metrics of happiness with correlation coefficients of -0.82, 0.78, and 0.73, indicating significant correlations. This means that as social support decreased, so did happiness, and as life expectancy and GDP per capita rose, happiness tended to follow.
 
-• It was interesting to note that corruption had a very weak negative correlation of -0.22 indicating that countries with high corruption aren't necesarilly unhappy. In addition to this freedom had a corellation of -0.57 indicating only a moderate effect. It was hypothesized that the impact of these metrics would be greater.
+• It was noted that corruption had a very weak negative correlation of -0.22, indicating that countries with high corruption aren't necessarily unhappy. In addition to this, freedom had a correlation of -0.57, indicating only a moderate effect. It was hypothesized that the impact of these metrics would be greater.
 
-• Geneorosity presented a moderate negative corellaton of -0.5 indicating that as generosity decreased so did happiness. This ws in line with expectations.
+• Generosity presented a moderate negative correlation of -0.5, indicating that as generosity decreased, so did happiness. This was in line with expectations.
 
 # Conclusion
 
