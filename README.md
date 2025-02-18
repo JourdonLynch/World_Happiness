@@ -72,7 +72,7 @@ Figure 4
 
 # Conclusion
 
-Happiness varies greatly both within and across regions throughout the world. While countries may have different values and beliefs there are still common themes among them. While the saying money doesnt buy happiness is not a foreign concept to many of us in the case of the world happiness report it definitely does make it easier to attain it.
+Happiness varies greatly both within and across regions throughout the world. While countries may have different values and beliefs, there are still common themes among them. Countries with high social support, life expectancy, and GDP per capita tend to be happier. These three factors are linked, as wealthier countries tend to have more social support and longer life expectancies. While the saying money doesn't buy happiness is not a foreign concept to many of us, in the case of the World Happiness Report, it definitely does make it easier to attain it.
 
 
 
