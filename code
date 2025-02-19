@@ -1,0 +1,171 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+# Loading csv data into a dataframe
+happiness = pd.read_csv('world_happiness.csv')
+print(happiness.isnull().sum())
+
+#Dataframe info
+print(happiness.shape)
+print(happiness.dtypes)
+
+#Using a dictionary to define regions
+regions = {
+    'North America': ['United States', 'Canada', 'Mexico', 'Guatemala', 'El Salvador', 'Honduras', 'Nicaragua', 'Trinidad and Tobago', 'Jamaica', 'Dominican Republic', 'Haiti'],
+    'Europe': ['Finland', 'Denmark', 'Norway', 'Iceland', 'Netherlands', 'Switzerland', 'Sweden', 'Austria', 'United Kingdom', 'Ireland', 'Germany', 'Belgium', 'Czech Republic', 'France', 'Spain', 'Italy', 'Poland', 'Lithuania', 'Slovenia', 'Romania', 'Latvia', 'Estonia', 'Hungary', 'Portugal', 'Serbia', 'Croatia', 'Greece', 'Bulgaria', 'Luxembourg', 'Malta', 'Cyprus', 'Montenegro', 'Moldova', 'Belarus', 'Ukraine', 'Albania', 'Armenia', 'Georgia', 'Russia'],
+    'Asia': ['Israel', 'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Singapore', 'Bahrain', 'Kuwait', 'South Korea', 'Japan', 'Kazakhstan', 'Pakistan', 'Philippines', 'Malaysia', 'China', 'Vietnam', 'Nepal', 'Cambodia', 'Iran', 'Bangladesh', 'Myanmar', 'India', 'Uzbekistan', 'Thailand', 'Tajikistan', 'Turkey', 'Mongolia', 'Turkmenistan', 'Azerbaijan', 'Lebanon', 'Indonesia', 'Bhutan', 'Jordan', 'Iraq', 'Sri Lanka', 'Syria', 'Yemen', 'Afghanistan'],
+    'Oceania': ['New Zealand', 'Australia'],
+    'South America': ['Costa Rica', 'Chile', 'Panama', 'Brazil', 'Uruguay', 'Colombia', 'Argentina', 'Ecuador', 'Bolivia', 'Paraguay', 'Peru', 'Venezuela'],
+    'Africa': ['South Africa', 'Morocco', 'Cameroon', 'Ghana', 'Benin', 'Gabon', 'Somalia', 'Namibia', 'Niger', 'Burkina Faso', 'Guinea', 'Kenya', 'Mauritania', 'Mozambique', 'Tunisia', 'Mali', 'Sierra Leone', 'Chad', 'Ethiopia', 'Uganda', 'Egypt', 'Zambia', 'Togo', 'Madagascar', 'Zimbabwe', 'Malawi', 'Tanzania', 'Rwanda', 'Mauritius', 'Libya', 'Nigeria', 'Algeria', 'Senegal', 'Gambia', 'Swaziland', 'Liberia', 'Comoros', 'Lesotho', 'Burundi', 'Botswana', 'Central African Republic', 'South Sudan']
+}
+
+#Creating function to return the region based on the country
+def get_region(country):
+    for region, countries in regions.items():
+        if country in countries:
+            return region
+    return 'Other'
+
+#Adding region column
+happiness['region'] = happiness['country'].apply(get_region)
+print(happiness.head(10))
+
+#Grouping by region and calculating mean happiness score
+
+
+mean_regional_happiness = happiness.groupby('region')['happiness_score'].mean().sort_values(ascending = False)
+
+print("Regional Happiness" + ': ' + str(mean_regional_happiness))
+
+#Finding the interquartile range of each region
+regional_happiness = happiness.groupby('region')['happiness_score']
+
+q1 = regional_happiness.quantile(0.25)
+q3 = regional_happiness.quantile(0.75)
+iqr = q3 - q1
+
+print(iqr.sort_values(ascending = False))
+
+#Min and Max Happiness scores by region
+print('Min Happiness Score by Region' + ' ' + str(happiness.groupby('region')['happiness_score'].min()))
+
+print('Max Happiness Score by Region' + ' ' + str(happiness.groupby('region')['happiness_score'].max()))
+
+#Creating boxplot of regional happiness scores
+ax = sns.boxplot(x='region', y='happiness_score', data=happiness, hue='region', legend = False)
+plt.title('Regional Happiness Scores')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+#Top 10 happiest countries 
+top_10_happiest_countries = happiness.sort_values('happiness_score',ascending = False).head(10)
+
+#Barplot of top 10 happiest countries
+custom_pallete1 = {'Europe': '#1f77b4', 'Oceania': '#ff7f0e', 'North America': '#2ca02c', 'Africa': '#d62728', 'Asia': '#9467bd', 'South America':'#8c564b'}
+ax = sns.barplot(x='country', y='happiness_score', data=top_10_happiest_countries,hue = 'region', palette = custom_pallete1)
+plt.legend(bbox_to_anchor=(1.0, 0.0), loc='lower right', title='Region')
+
+for i, v in enumerate(top_10_happiest_countries['happiness_score'].values):
+    ax.text(i, v, f'{v:.2f}', ha='center', va='bottom')
+plt.title("Top 10 Happiest Countries")
+xlabel = 'Country'
+ylabel = 'Happiness Score'
+plt.xticks(rotation = 45)
+plt.tight_layout()
+plt.show()
+
+#Bottom 10 happiest countries
+bottom_10_happiest_countries = happiness.sort_values('happiness_score',ascending = True).head(10)
+
+#Barplot of bottom 10 happiest countries
+bx = sns.barplot(x='country', y='happiness_score', data=bottom_10_happiest_countries, 
+                hue='region', palette = custom_pallete1)
+plt.legend(bbox_to_anchor=(1.0, 0.0), loc='lower right', title='Region')
+
+for i, v in enumerate(bottom_10_happiest_countries['happiness_score'].values):
+    bx.text(i,v,f'{v:.2f}',ha='center',va='bottom')
+
+plt.title("Bottom 10 Happiest Countries")
+plt.xticks(rotation = 45)
+plt.ylim(0,10)
+xlabel='Country'
+ylabel='Happiness Score'
+plt.tight_layout()
+plt.show()
+
+
+#Filling null values
+happiness = happiness.fillna({'social_support': happiness['social_support'].mean(),'freedom': happiness['freedom'].mean(),'generosity':happiness['generosity'].mean(),'corruption': happiness['corruption'].mean()})
+
+# correlation between social_support and happiness score
+social_support_correlation = happiness['social_support'].corr(happiness['happiness_score']).round(2)
+print('social support correlation' + ' = ' + str(social_support_correlation))
+
+# correlation between freedom and happiness score
+freedom_correlation = happiness['freedom'].corr(happiness['happiness_score']).round(2)
+print('freedom_correlation' + ' = ' + str(freedom_correlation))
+
+# correlation between corruption and happiness score
+corruption_correlation = happiness['corruption'].corr(happiness['happiness_score']).round(2)
+print('corruption_correlation' + ' = ' + str(corruption_correlation))
+# correlation between generosity and happiness score
+generosity_correlation = happiness['generosity'].corr(happiness['happiness_score']).round(2)
+print('generosity_correlation' + ' = ' + str(generosity_correlation))
+
+# correlation between gdp per capita expectancy and happiness score
+gdp_per_cap_correlation = happiness['gdp_per_cap'].corr(happiness['happiness_score']).round(2)
+print('gdp_per_cap_correlation' + ' = ' + str(gdp_per_cap_correlation))
+
+# correlation between life expectancy and happiness score
+life_exp_correlation = happiness['life_exp'].corr(happiness['happiness_score']).round(2)
+print('life_exp_correlation' + ' = ' + str(life_exp_correlation))
+
+
+# Create a diverging colormap
+green = (0, 1, 0)  # RGB for green
+red = (1, 0, 0)    # RGB for red
+neutral = (0.5, 0.5, 0.5)  # RGB for a neutral gray
+my_palette = LinearSegmentedColormap.from_list('green_to_red', [red, neutral, green], N=10)
+
+
+# Normalizing the happiness_score
+happiness['happiness_score_norm'] = (happiness['happiness_score'] - happiness['happiness_score'].min()) / (happiness['happiness_score'].max() - happiness['happiness_score'].min())
+
+# Mapping colors based on normalized happiness_score
+colors = [my_palette(i) for i in happiness['happiness_score_norm']]
+
+
+
+# Creating subplots
+fig, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, figsize=(7, 5))
+
+# Create regplots
+sns.regplot(x='social_support', y='happiness_score', data=happiness, ax=ax1,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax1.set_title('Social Support vs Happiness(r = -0.82)')
+
+sns.regplot(x='freedom', y='happiness_score', data=happiness, ax=ax2,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax2.set_title('Freedom vs Happiness(r = -0.57)')
+
+sns.regplot(x='corruption', y='happiness_score', data=happiness, ax=ax3,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax3.set_title('Corruption vs Happiness(r = -0.22)')
+
+sns.regplot(x='generosity', y='happiness_score', data=happiness, ax=ax4,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax4.set_title('Generosity vs Happiness(r = -0.5)')
+
+sns.regplot(x='gdp_per_cap', y='happiness_score', data=happiness, ax=ax5,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax5.set_title('GDP vs Happiness(r = 0.73)')
+
+sns.regplot(x='life_exp', y='happiness_score', data=happiness, ax=ax6,
+            scatter_kws={"color": colors}, line_kws={"color": "black"}, ci=None)
+ax6.set_title('Life Expectancy vs Happiness(r = 0.78)')
+
+plt.tight_layout()
+plt.show()
