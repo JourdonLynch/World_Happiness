@@ -8,7 +8,7 @@ If there's one thing everyone wants, it's to be happy; however, it’s challengi
 
  The Pandas, matplotlib.pyplot, and seaborn libraries were imported to conduct the cleaning and analysis.
 
-The initial dataframe consisted of 135 rows and 10 columns
+The initial dataframe from 2019 consisted of 135 rows and 10 columns
 • The country column contained the object data type and consisted of the names of 135 countries included in the study and had no null values. No changes were made.
 
 • The **social_support** column contained the float64 data type and ranked countries based on their social support. 1 null value was found and filled with the mean column value instead of removing the row.
